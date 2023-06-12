@@ -25,7 +25,29 @@
   // "forwardPorts": [],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "rustc --version"
+  "postCreateCommand": "rustc --version",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "wmaurer.change-case",
+        "genieai.chatgpt-vscode",
+        "streetsidesoftware.code-spell-checker",
+        "riussi.code-stats-vscode",
+        "EditorConfig.EditorConfig",
+        "mhutchie.git-graph",
+        "GitHub.copilot",
+        "GitHub.copilot-labs",
+        "michelemelluso.gitignore",
+        "GitHub.remotehub",
+        "eamodio.gitlens",
+        "TeamHub.teamhub",
+        "esbenp.prettier-vscode",
+        "Gruntfuggly.todo-tree",
+        "dakara.transformer",
+        "vscode-icons-team.vscode-icons"
+      ]
+    }
+  }
 
   // Configure tool-specific properties.
   // "customizations": {},
