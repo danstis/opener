@@ -34,14 +34,16 @@ jobs:
         with:
           semantic_version: 19
           branches: main
-      - name: Install GitHub CLI
+      - name: Install latest GitHub CLI
         run: |
-          curl -LO https://github.com/cli/cli/releases/download/v2.0.0/gh_2.0.0_windows_amd64.msi
-          msiexec.exe /i gh_2.0.0_windows_amd64.msi /quiet /qn /norestart
+          curl -LO https://github.com/cli/cli/releases/download/v2.4.0/gh_2.4.0_windows_amd64.msi
+          msiexec.exe /i gh_2.4.0_windows_amd64.msi /quiet /qn /norestart
       - name: Create Release and Discussion
         id: create_release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release create ${{ steps.semantic.outputs.new_release_published }} --title "Release ${{ steps.semantic.outputs.new_release_published }}" --notes "${{ steps.semantic.outputs.new_release_notes }}" --draft=$false --prerelease=${{ github.event_name == 'pull_request' }}
-          gh discussion create --category "Releases" --title "Release ${{ steps.semantic.outputs.new_release_published }}" --body "${{ steps.semantic.outputs.new_release_notes }}"
+          if [ "${{ steps.semantic.outputs.new_release_published }}" != "false" ]; then
+            gh release create ${{ steps.semantic.outputs.new_release_published }} --title "Release ${{ steps.semantic.outputs.new_release_published }}" --notes "${{ steps.semantic.outputs.new_release_notes }}" --draft=$false --prerelease=${{ github.event_name == 'pull_request' }}
+            gh discussion create --category "Releases" --title "Release ${{ steps.semantic.outputs.new_release_published }}" --body "${{ steps.semantic.outputs.new_release_notes }}"
+          fi
