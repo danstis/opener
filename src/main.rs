@@ -3,7 +3,7 @@ extern crate systray;
 fn main() {
     match systray::Application::new() {
         Ok(mut app) => {
-            app.set_icon_from_file(&"path/to/icon.ico").ok();
+            app.set_icon_from_file(&"img/can-opener.ico").ok();
             app.add_menu_item(&"Open Settings", |_| {
                 // Open settings dialog
                 println!("Settings dialog opened");
