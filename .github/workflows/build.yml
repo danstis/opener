@@ -1,6 +1,6 @@
 name: Python application build and pre-release
 
-on: 
+on:
   push:
     branches: ["main"]
   pull_request:
@@ -42,6 +42,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh auth login --with-token <<< "${GH_TOKEN}"
+          echo ${GH_TOKEN} | gh auth login --with-token
           gh release create ${{ steps.semantic.outputs.new_release_published }} --title "Release ${{ steps.semantic.outputs.new_release_published }}" --notes "${{ steps.semantic.outputs.new_release_notes }}" --draft=$false --prerelease=${{ github.event_name == 'pull_request' }}
           gh discussion create --category "Releases" --title "Release ${{ steps.semantic.outputs.new_release_published }}" --body "${{ steps.semantic.outputs.new_release_notes }}"
