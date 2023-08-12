@@ -8,6 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.7,<3.13"
 pystray = "^0.17.3"
+pyinstaller = "^5.13.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
