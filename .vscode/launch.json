@@ -6,12 +6,7 @@
       "type": "python",
       "request": "launch",
       "program": "${workspaceFolder}/opener/main.py",
-      "console": "integratedTerminal",
-      "python": {
-        "poetry": {
-          "enabled": true
-        }
-      }
+      "console": "integratedTerminal"
     }
   ]
 }
