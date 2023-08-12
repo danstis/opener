@@ -1,14 +1,13 @@
 [tool.poetry]
 name = "opener"
 version = "0.1.0"
-description = "A Python application that creates a Windows 11 system tray icon."
+description = "A Python application that creates a Windows system tray icon."
 authors = ["Dan Anstis <dan@bsod.co.nz>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.7"
 pystray = "^0.17.3"
-pyinstaller = "^4.7"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
