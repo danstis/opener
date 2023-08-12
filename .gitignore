@@ -5,3 +5,23 @@
 __pypackages__/
 pyproject.lock
 .venv
+
+# Python
+*.py[cod]
+*.pyd
+*.so
+*.egg
+*.egg-info
+dist/
+build/
+.eggs/
+*.egg-info/
+.pytest_cache/
+.pybuild/
+instance/
+.coverage
+.cache/
+.mypy_cache/
+.nox/
+*.mo
+*.pot
