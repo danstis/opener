@@ -33,14 +33,14 @@ jobs:
           extra_plugins: |
             @semantic-release/changelog
             @semantic-release/github
-      - name: Create Pre-Release
+      - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ steps.semantic.outputs.new_release_published }}
-          release_name: Pre-Release ${{ steps.semantic.outputs.new_release_published }}
+          release_name: Release ${{ steps.semantic.outputs.new_release_published }}
           body: ${{ steps.semantic.outputs.new_release_notes }}
-          draft: true
-          prerelease: true
+          draft: false
+          prerelease: ${{ github.event_name == 'pull_request' }}
