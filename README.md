@@ -1,6 +1,7 @@
 # opener
 
-This is a simple C# application that displays a system tray icon and opens a settings dialog when the "Open Settings" menu item is clicked.
+opener is a tool that enables opening a selection of applications in a single command. Each application is configured to
+open on a selected screen and quadrant.
 
 ## Attribution
 
