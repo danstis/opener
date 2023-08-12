@@ -1,25 +1,12 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "configurations": [
     {
-      "name": "opener",
+      "name": "Python: Current File",
       "type": "python",
       "request": "launch",
-      "cwd": "${workspaceFolder}",
-      "module": "opener",
-      "args": []
+      "program": "${workspaceFolder}/opener/main.py",
+      "console": "integratedTerminal"
     }
   ]
-}
-{
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Python: Current File",
-            "type": "python",
-            "request": "launch",
-            "program": "${workspaceFolder}/opener/main.py",
-            "console": "integratedTerminal"
-        }
-    ]
 }
