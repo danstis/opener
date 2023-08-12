@@ -1,11 +1,3 @@
-# Project specific
-.aider*
-
-# Poetry
-__pypackages__/
-pyproject.lock
-.venv
-
 # Python
 *.py[cod]
 *.pyd
@@ -25,3 +17,11 @@ instance/
 .nox/
 *.mo
 *.pot
+
+# Poetry
+__pypackages__/
+pyproject.lock
+.venv
+
+# Project specific
+.aider*
