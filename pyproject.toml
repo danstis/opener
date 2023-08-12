@@ -1,8 +1,9 @@
 [tool.poetry]
-name = "tray_app"
+name = "opener"
 version = "0.1.0"
 description = "A Python application that creates a Windows 11 system tray icon."
-authors = ["Your Name <your.email@example.com>"]
+authors = ["Dan Anstis <dan@bsod.co.nz>"]
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.8"
