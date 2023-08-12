@@ -17,13 +17,15 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: "3.9"
-      - name: Cache Poetry dependencies
+      - name: Cache Poetry and pip dependencies
         uses: actions/cache@v2
         with:
-          path: ~/.cache/pypoetry
-          key: ${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
+          path: |
+            ~/.cache/pypoetry
+            ~\pip
+          key: ${{ runner.os }}-poetry-pip-${{ hashFiles('**/poetry.lock') }}-${{ hashFiles('**/pip.lock') }}
           restore-keys: |
-            ${{ runner.os }}-poetry-
+            ${{ runner.os }}-poetry-pip-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
