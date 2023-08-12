@@ -24,15 +24,15 @@ jobs:
       - name: Build
         run: |
           pyinstaller --onefile opener/main.py
+      - name: Install semantic-release plugins
+        run: |
+          npm install @semantic-release/changelog @semantic-release/github
       - name: Semantic Release
         id: semantic
         uses: cycjimmy/semantic-release-action@v2
         with:
           semantic_version: 17
           branches: main
-          extra_plugins: |
-            @semantic-release/changelog
-            @semantic-release/github
       - name: Install GitHub CLI
         run: |
           curl -LO https://github.com/cli/cli/releases/download/v2.0.0/gh_2.0.0_windows_amd64.msi
