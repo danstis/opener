@@ -1,9 +1,7 @@
-name: Python application build
+name: Python application build and release
 
 on:
   push:
-    branches: ["main"]
-  pull_request:
     branches: ["main"]
 
 jobs:
@@ -23,3 +21,23 @@ jobs:
       - name: Build
         run: |
           pyinstaller --onefile main.py
+      - name: Semantic Release
+        id: semantic
+        uses: cycjimmy/semantic-release-action@v2
+        with:
+          semantic_version: 17
+          branches: ['main']
+          extra_plugins: |
+            @semantic-release/changelog
+            @semantic-release/github
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.semantic.outputs.new_release_published }}
+          release_name: Release ${{ steps.semantic.outputs.new_release_published }}
+          body: ${{ steps.semantic.outputs.new_release_notes }}
+          draft: false
+          prerelease: false
