@@ -6,7 +6,7 @@ authors = ["Dan Anstis <dan@bsod.co.nz>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.7,<3.13"
 pystray = "^0.17.3"
 
 [build-system]
