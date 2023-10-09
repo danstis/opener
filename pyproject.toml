@@ -6,8 +6,16 @@ authors = ["Dan Anstis <dan@bsod.co.nz>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.7,<3.13"
+python = "^3.10,<3.13"
 pystray = "^0.17.3"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.2"
+pytest-cov = "^4.1.0"
+tox = "^4.11.3"
+flake8 = "^6.1.0"
+pylint = "^3.0.1"
+mypy = "^1.5.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
