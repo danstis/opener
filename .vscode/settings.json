@@ -1,6 +1,11 @@
 {
   "sonarlint.connectedMode.project": {
-    "connectionId": "SonarLint",
+    "connectionId": "danstis",
     "projectKey": "danstis_opener"
-  }
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "python.formatting.provider": "none",
+  "cSpell.words": ["pystray"]
 }

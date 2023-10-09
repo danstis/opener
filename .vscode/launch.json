@@ -6,7 +6,7 @@
       "type": "python",
       "request": "launch",
       "program": "${workspaceFolder}/opener/main.py",
-      "console": "integratedTerminal"
+      "console": "internalConsole"
     }
   ]
 }
