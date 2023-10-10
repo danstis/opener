@@ -19,9 +19,10 @@ def test_read_config(tmp_path):
 def test_create_menu():
     # Test the create_menu function
     # This is a placeholder test and may need to be updated based on the functionality of your create_menu function
+    icon = mock.Mock()
     item = mock.Mock()
     item.text = "Exit"
-    assert main.create_menu(None, item) == None
+    assert main.create_menu(icon, item) == None
 
 def test_setup():
     # Test the setup function
