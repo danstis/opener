@@ -19,18 +19,18 @@ def create_menu(icon, item) -> None:
         icon.stop()
 
 
-def read_config() -> dict:
+def read_config(path: str = "config.json") -> dict:
     """
     Reads the configuration from the 'config.json' file.
 
     Returns: (dict) The configuration data as a dictionary.
     """
-    with open("config.json", "r") as f:
+    with open(path, "r") as f:
         config = json.load(f)
     return config
 
 
-def setup(icon) -> None:
+def setup(icon: pystray.Icon) -> None:
     """
     Sets the visibility of the given icon.
 
@@ -54,7 +54,7 @@ def main() -> None:
         image,
         "My System Tray Icon",
         menu=pystray.Menu(
-            pystray.MenuItem("Version 0.1.0", lambda text: None),
+            pystray.MenuItem("Opener v0.1.0", lambda text: None),
             pystray.MenuItem("Exit", create_menu),
         ),
     )
