@@ -1,5 +1,19 @@
+import json
 import pytest
 from opener import main
+
+def test_read_config(tmp_path):
+    # Create a temporary JSON file with some configuration data
+    config_data = {"image_path": "img/test-icon.ico"}
+    config_file = tmp_path / "config.json"
+    with open(config_file, "w") as f:
+        json.dump(config_data, f)
+
+    # Call read_config with the path to the temporary file
+    config = main.read_config(config_file)
+
+    # Assert that the returned dictionary matches the configuration data
+    assert config == config_data
 
 def test_create_menu():
     # Test the create_menu function
