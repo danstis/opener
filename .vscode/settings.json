@@ -7,5 +7,5 @@
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
   "python.formatting.provider": "none",
-  "cSpell.words": ["pystray"]
+  "cSpell.words": ["pyautogui", "pystray"]
 }
