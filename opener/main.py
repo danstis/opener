@@ -47,7 +47,8 @@ def main() -> None:
     """
     Initializes the main function.
     """
-    image_path = "img/can-opener.ico"
+    config = read_config()
+    image_path = config.get("image_path", "img/can-opener.ico")
     image = Image.open(image_path)
     icon = pystray.Icon(
         "name",
