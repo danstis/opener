@@ -25,3 +25,4 @@ pyproject.lock
 
 # Project specific
 .aider*
+/config.json
