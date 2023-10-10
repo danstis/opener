@@ -1,5 +1,6 @@
 import json
 import pytest
+from unittest import mock
 from opener import main
 
 def test_read_config(tmp_path):
@@ -18,7 +19,9 @@ def test_read_config(tmp_path):
 def test_create_menu():
     # Test the create_menu function
     # This is a placeholder test and may need to be updated based on the functionality of your create_menu function
-    assert main.create_menu(None, None) == None
+    item = mock.Mock()
+    item.text = "Exit"
+    assert main.create_menu(None, item) == None
 
 def test_setup():
     # Test the setup function
