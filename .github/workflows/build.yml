@@ -39,7 +39,7 @@ jobs:
           npm install @semantic-release/changelog @semantic-release/github
       - name: Semantic Release
         id: semantic
-        uses: cycjimmy/semantic-release-action@v2
+        uses: cycjimmy/semantic-release-action@v4
         with:
           semantic_version: 19
           branches: main
